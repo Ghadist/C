@@ -1,0 +1,270 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+unsigned char PutTrue8(unsigned char target, unsigned char mask);
+unsigned char PutFalse8(unsigned char target, unsigned char mask);
+short int PutTrue16(short int target, short int mask);
+short int PutFalse16(short int target, short int mask);
+unsigned int PutTrue32(unsigned int target, unsigned int mask);
+unsigned int PutFalse32(unsigned int target, unsigned int mask);
+unsigned char Reverse8(unsigned char target, unsigned char mask);
+short int Reverse16(short int target, short int mask);
+unsigned int Reverse32(unsigned int target, unsigned int mask);
+unsigned char LogicMoveLeft8(unsigned char target, unsigned char move);
+short int LogicMoveLeft16(short int target, short int move);
+unsigned int LogicMoveLeft32(unsigned int target, unsigned int move);
+unsigned char LogicMoveRight8(unsigned char target, unsigned char move);
+short int LogicMoveRight16(short int target, short int move);
+unsigned int LogicMoveRight32(unsigned int target, unsigned int move);
+unsigned char CicleMoveLeft8(unsigned char target, unsigned char move);
+short int CicleMoveLeft16(short int target, short int move);
+unsigned int CicleMoveLeft32(unsigned int target, unsigned int move);
+unsigned char CicleMoveRight8(unsigned char target, unsigned char move);
+short int CicleMoveRight16(short int target, short int move);
+unsigned int CicleMoveRight32(unsigned int target, unsigned int move);
+
+
+int main()
+{
+    unsigned char target8 = 116;
+    unsigned char mask8 = 170;
+	
+	  short int target16 = 116;
+    short int mask16 = 170;
+	
+	  unsigned int target32 = 116;
+    unsigned int mask32 = 170;
+	
+	  target8 = PutTrue8(target8, mask8);
+    printf("%x\n", target8);
+	
+	  target16 = PutTrue16(target16, mask16);
+    printf("%x\n", target16);
+	
+    target32 = PutTrue32(target32, mask32);
+    printf("%x\n", target32);
+	
+	  target8 = 116;
+	  target16 = 116;
+	  target32 = 116;
+	
+	  target8 = PutFalse8(target8, mask8);
+    printf("%x\n", target8);
+	
+	  target16 = PutFalse16(target16, mask16);
+    printf("%x\n", target16);
+	
+	  target32 = PutFalse32(target32, mask32);
+    printf("%x\n", target32);
+	
+	  target8 = 116;
+	  target16 = 116;
+	  target32 = 116;
+	
+	  target8 = Reverse8(target8, mask8);
+    printf("%x\n", target8);
+	
+	  target16 = Reverse16(target16, mask16);
+    printf("%x\n", target16);
+	
+	  target32 = Reverse32(target32, mask32);
+    printf("%x\n", target32);
+	
+	  target8 = 116;
+	  target16 = 116;
+	  target32 = 116;
+	
+	  unsigned char move8 = 3;
+  	short int move16 = 3;
+	  unsigned int move32 = 3;
+	
+	  target8 = LogicMoveLeft8(target8, move8);
+	  target16 = LogicMoveLeft16(target16, move16);
+	  target32 = LogicMoveLeft32(target32, move32);
+	
+    printf("%x\n", target8);
+    printf("%x\n", target16);
+    printf("%x\n", target32);
+	
+	  target8 = 116;
+	  target16 = 116;
+	  target32 = 116;
+	
+	  target8 = LogicMoveRight8(target8, move8);
+	  target16 = LogicMoveRight16(target16, move16);
+	  target32 = LogicMoveRight32(target32, move32);
+	
+    printf("%x\n", target8);
+    printf("%x\n", target16);
+    printf("%x\n", target32);
+    
+    target8 = 116;
+	  target16 = 116;
+	  target32 = 116;
+    
+    target8 = CicleMoveLeft8(target8, move8);
+	  target16 = CicleMoveLeft16(target16, move16);
+	  target32 = CicleMoveLeft32(target32, move32);
+	
+    printf("%x\n", target8);
+    printf("%x\n", target16);
+    printf("%x\n", target32);
+    
+    target8 = 116;
+	  target16 = 116;
+	  target32 = 116;
+	
+	  target8 = CicleMoveRight8(target8, move8);
+	  target16 = CicleMoveRight16(target16, move16);
+	  target32 = CicleMoveRight32(target32, move32);
+	
+    printf("%x\n", target8);
+    printf("%x\n", target16);
+    printf("%x\n", target32);
+	
+    return 0;
+}
+
+unsigned char PutTrue8(unsigned char target, unsigned char mask)
+{
+	  target = target | mask;
+	  return target;
+}
+
+short int PutTrue16(short int target, short int mask)
+{
+	  target = target | mask;
+	  return target;
+}
+
+unsigned int PutTrue32(unsigned int target, unsigned int mask)
+{
+	  target = target | mask;
+	  return target;
+}
+
+unsigned char PutFalse8(unsigned char target, unsigned char mask)
+{
+	  target = target & ~mask;
+	  return target;
+}
+
+short int PutFalse16(short int target, short int mask)
+{
+	  target = target & ~mask;
+	  return target;
+}
+
+unsigned int PutFalse32(unsigned int target, unsigned int mask)
+{
+	  target = target & ~mask;
+	  return target;
+}
+
+unsigned char Reverse8(unsigned char target, unsigned char mask)
+{
+	  target = target ^ mask;
+	  return target;
+}
+
+short int Reverse16(short int target, short int mask)
+{
+	  target = target ^ mask;
+	  return target;
+}
+
+unsigned int Reverse32(unsigned int target, unsigned int mask)
+{
+	  target = target ^ mask;
+	  return target;
+}
+
+unsigned char LogicMoveLeft8(unsigned char target, unsigned char move)
+{
+	  target = target << move;
+	  return target;
+}
+
+short int LogicMoveLeft16(short int target, short int move)
+{
+	  target = target << move;
+	  return target;
+}
+
+unsigned int LogicMoveLeft32(unsigned int target, unsigned int move)
+{
+	  target = target << move;
+	  return target;
+}
+
+unsigned char LogicMoveRight8(unsigned char target, unsigned char move)
+{
+	  target = target >> move;
+	  return target;
+}
+
+short int LogicMoveRight16(short int target, short int move)
+{
+	  target = target >> move;
+	  return target;
+}
+
+unsigned int LogicMoveRight32(unsigned int target, unsigned int move)
+{
+	  target = target >> move;
+	  return target;
+}
+
+unsigned char CicleMoveLeft8(unsigned char target, unsigned char move)
+{
+    unsigned char support1, support2;
+    move = move % (sizeof(target)*8);
+    support1 = target << move;
+    support2 = target >> (sizeof(target)*8 - move);
+    return support1 | support2;
+}
+
+short int CicleMoveLeft16(short int target, short int move)
+{
+    short int support1, support2;
+    move = move % (sizeof(target)*8);
+    support1 = target << move;
+    support2 = target >> (sizeof(target)*8 - move);
+    return support1 | support2;
+}
+
+unsigned int CicleMoveLeft32(unsigned int target, unsigned int move)
+{
+    unsigned int support1, support2;
+    move = move % (sizeof(target)*8);
+    support1 = target << move;
+    support2 = target >> (sizeof(target)*8 - move);
+    return support1 | support2;
+}
+
+unsigned char CicleMoveRight8(unsigned char target, unsigned char move)
+{
+    unsigned char support1, support2;
+    move = move % (sizeof(target)*8);
+    support1 = target >> move;
+    support2 = target << (sizeof(target)*8 - move);
+    return support1 | support2;
+}
+
+short int CicleMoveRight16(short int target, short int move)
+{
+    short int support1, support2;
+    move = move % (sizeof(target)*8);
+    support1 = target >> move;
+    support2 = target << (sizeof(target)*8 - move);
+    return support1 | support2;
+}
+
+unsigned int CicleMoveRight32(unsigned int target, unsigned int move)
+{
+    unsigned int support1, support2;
+    move = move % (sizeof(target)*8);
+    support1 = target >> move;
+    support2 = target << (sizeof(target)*8 - move);
+    return support1 | support2;
+}
