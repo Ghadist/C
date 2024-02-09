@@ -1,0 +1,64 @@
+#include <stdio.h>
+#include <math.h>
+
+double Average(double array[10]);
+double AverageWithPointer(double ptrArray[10]);
+double BigSplit(double x, double y, double z);
+double FunctionInFunction(double x, double y, double z, double bigsplit);
+void Collision();
+
+
+int main()
+{
+    double array[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};		
+    double average = Average(array);
+    double averageWP = AverageWithPointer(array);
+    double x = 2;
+    double y = 3;
+    double z = 4;
+    double calculate = FunctionInFunction(x, y, z, BigSplit(x, y, z));
+    Collision();
+    return 0;
+}
+
+double Average(double array[10])
+{
+    double sum = 0;
+    for(int index = 0; index<10; index++)
+    {
+        sum += array[index];
+    }		sum = sum/10;
+    return sum;
+}
+
+double AverageWithPointer(double ptrArray[10])
+{
+    double sum = 0;
+    for(int index = 0; index<10; index++)
+    {
+        sum += *(ptrArray + index);
+    }
+    return sum/10;
+}
+
+double FunctionInFunction(double x, double y, double z, double bigsplit)
+{
+    double support = bigsplit + log(x);
+    return support;
+}
+
+double BigSplit(double x, double y, double z)
+{
+    double stepFirst = (sqrt(x+y)) * log(z);
+    double stepSecond = log10(y) + sqrt(x);
+    double result = stepFirst/stepSecond;
+    return result;
+}
+
+void Collision()
+{    
+    double arrayFirst[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    double arraySecond[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};  
+    arrayFirst[15] = 95;   
+    *(arrayFirst + 18) = 65;        
+}
